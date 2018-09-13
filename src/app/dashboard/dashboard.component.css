@@ -1,0 +1,46 @@
+.grid-container {
+  margin: 20px;
+  
+}
+
+.dashboard-card {
+  position: absolute;
+  width: 65%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 15px;
+  right: 15px;
+  padding-bottom: 50px;
+}
+
+.header-title {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+.dashboard-card-content {
+  padding-top: 50px;
+}
+
+ input[type=text],[type=email] {
+  width: 47%;
+}
+
+
+.left, .right {
+  float: left;
+  width: 50%;
+}
+
+.left input[type=text]{
+  width: 98%;
+}
+.right input[type=text]{
+  width: 98%;
+}
+
+select {
+  width: 98%;
+  height: 22px;
+}
