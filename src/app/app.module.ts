@@ -14,6 +14,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     DashboardComponent,
     NavbarComponent
   ],
+
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -28,6 +29,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     MatSidenavModule,
     MatListModule
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })
