@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointState, BreakpointObserver } from '@angular/cdk/layout';
 import { Customer } from '../customer';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,5 +11,15 @@ import { Customer } from '../customer';
 })
 export class DashboardComponent {
   phoneTypes = ['Mobile Phone', 'Land Phone'];
-  customerModule = new Customer('','','','','','','','','','','','','','')
+  customerModule = new Customer('','','','','','','','','','','','','','');
+  
+  emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.email,
+  ]);
+  getErrorMessage() {
+    return this.emailFormControl.hasError('required') ? 'You must enter a value' :
+        this.emailFormControl.hasError('email') ? 'Not a valid email' :
+            '';
+  }
 }

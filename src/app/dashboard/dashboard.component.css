@@ -1,13 +1,13 @@
 .grid-container {
   margin: 20px;
+  width: 60%;
+  margin: 0 auto;
   
 }
 
 .dashboard-card {
   position: absolute;
-  width: 65%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   left: 15px;
   right: 15px;
   padding-bottom: 50px;
@@ -33,6 +33,10 @@
   width: 50%;
 }
 
+.float-input{
+  width: 97%;
+}
+
 .left input[type=text]{
   width: 98%;
 }
@@ -43,4 +47,16 @@
 select {
   width: 98%;
   height: 22px;
+}
+
+.example-form {
+  width: 100% !important;
+}
+
+.full-width {
+  width: 98.5% ;
+}
+
+.required-field {
+  border-color: brown !important;
 }
