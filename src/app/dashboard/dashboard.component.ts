@@ -11,15 +11,52 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class DashboardComponent {
   phoneTypes = ['Mobile Phone', 'Land Phone'];
-  customerModule = new Customer('','','','','','','','','','','','','','');
+  phone3TypeDisable = false;
   
-  emailFormControl = new FormControl('', [
+  emailControl = new FormControl('', [
     Validators.required,
     Validators.email,
   ]);
   getErrorMessage() {
-    return this.emailFormControl.hasError('required') ? 'You must enter a value' :
-        this.emailFormControl.hasError('email') ? 'Not a valid email' :
+    return this.emailControl.hasError('required') ? 'You must enter a value' :
+        this.emailControl.hasError('email') ? 'Not a valid email' :
             '';
   }
+
+  firstNameControl = new FormControl('', );
+  lastNameControl = new FormControl('', );
+  companyNameControl = new FormControl('', );
+
+  addressControl = new FormControl('', [
+    Validators.required
+  ]);
+  cityControl = new FormControl('', [
+    Validators.required
+  ]);
+  provinceControl = new FormControl('', [
+    Validators.required
+  ]);
+  postalControl = new FormControl('', [
+    Validators.required
+  ]);
+  phone1Control = new FormControl('', [
+    Validators.required
+  ]);
+  phone1typeControl = new FormControl('', [
+    Validators.required
+  ]);
+  phone3Control = new FormControl();
+  
+
+  
+  // get_ErrorMessage() {
+  //   return this.email.hasError('required') ? 'You must enter a value' :
+  //       this.email.hasError('email') ? 'Not a valid email' :
+  //           '';
+  // }
+
+  customerModel = new Customer(
+    this.emailControl.value,this.firstNameControl.value,this.lastNameControl.value,this.companyNameControl.value,
+    this.addressControl.value,this.cityControl.value,this.provinceControl.value,this.postalControl.value,this.phone1Control.value,'','','','','');
+  
 }
