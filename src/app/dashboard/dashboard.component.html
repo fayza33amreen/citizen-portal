@@ -5,11 +5,11 @@
       <mat-toolbar  class="header-title">New Customer Sign-Up</mat-toolbar>
     </mat-card-header>
     <mat-card-content class="dashboard-card-content" >
-      <form #userForm="ngForm" (ngSubmit)="signUp()" class="example-form" novalidate>
+      <form #userForm="ngForm" class="example-form" >
         <div>
           <mat-form-field appearance="outline" class="full-width">
             <mat-label>Email: <span style="color: red">(required)</span></mat-label>
-            <input matInput placeholder="Email" [(formControl)]="emailControl" >
+            <input matInput placeholder="Email" [(formControl)]="emailControl">
             <mat-error *ngIf="emailControl.hasError('email') && !emailControl.hasError('required')">
               Please enter a valid email address
             </mat-error>
@@ -17,7 +17,6 @@
               Email is <strong>required</strong>
             </mat-error>
           </mat-form-field> 
-          {{ emailControl.value }}
         </div>
         <div style="clear:both;"></div>
         <div class="left">
@@ -25,7 +24,6 @@
             <mat-label>First Name:</mat-label>
             <input matInput placeholder="First Name" name="firstName" [(formControl)]="firstNameControl">
           </mat-form-field>
-          {{ firstNameControl.value }}
         </div>
         <div class="right">
           <mat-form-field appearance="outline" class="float-input">
@@ -48,7 +46,6 @@
               Address is <strong>required</strong>
             </mat-error>
           </mat-form-field>
-          {{ addressControl.value }}
         </div>
         <div>
           <mat-form-field appearance="outline" class="full-width">
@@ -88,12 +85,12 @@
           </div>
           <div class="right">
             <mat-form-field appearance="outline" class="float-input">
-              <mat-select placeholder="Phone1 Type" name="phone1Type" [(formControl)]="phone1typeControl">
+              <mat-select placeholder="Phone1 Type" name="phone1Type" [(formControl)]="phone1TypeControl">
                 <mat-option *ngFor="let phoneType of phoneTypes" value="phoneType.index">
                   {{ phoneType }}
                 </mat-option>
               </mat-select>
-              <mat-error *ngIf="phone1typeControl.hasError('required')">
+              <mat-error *ngIf="phone1TypeControl.hasError('required')">
                 Phone 1 Type is <strong>required</strong>
               </mat-error>
             </mat-form-field>
@@ -102,12 +99,12 @@
           <div class="left">
             <mat-form-field appearance="outline" class="float-input">
               <mat-label>Phone2:</mat-label>
-              <input matInput placeholder="Phone2">
+              <input matInput placeholder="Phone2" [(formControl)]="phone2Control">
             </mat-form-field>
           </div>
           <div class="right">
             <mat-form-field appearance="outline" class="float-input">
-              <mat-select placeholder="Phone2 Type" name="phone2Type" [(ngModel)]="phone2Type">
+              <mat-select placeholder="Phone2 Type" name="phone2Type" [(formControl)]="phone2TypeControl">
                 <mat-option *ngFor="let phoneType of phoneTypes" value="phoneType.index">
                   {{ phoneType }}
                 </mat-option>
@@ -118,121 +115,24 @@
           <div class="left">
             <mat-form-field appearance="outline" class="float-input">
               <mat-label>Phone3:</mat-label>
-              <input matInput placeholder="Phone3" [(formControl)]='phone3Control'> 
+              <input matInput placeholder="Phone3" [(formControl)]="phone3Control" > 
+              
             </mat-form-field>
           </div>
           <div class="right">
             <mat-form-field appearance="outline" class="float-input" >
-              <mat-select placeholder="Phone3 Type"  name="phone3Type" [disabled]=true>
+              <mat-select placeholder="Phone3 Type"  name="phone3Type" [(formControl)]="phone3TypeControl">
                 <mat-option *ngFor="let phoneType of phoneTypes" value="phoneType.index">{{ phoneType }}
                 </mat-option>
               </mat-select>
             </mat-form-field>
           </div>
         <div style="clear:both;"></div>
+        <br >
+        <button mat-stroked-button [disabled]='userForm.form.invalid' style="margin-right:2%" color="primary" (click)="openDialog()" >Sign Up</button>
+        <button mat-stroked-button>Cancel</button>
       </form> 
     </mat-card-content>
   </mat-card>
-
-
-  <!-- <div class="dashboard-card">
-    <p>Fields required for input are marked with <span style="color: red">*required</span></p>
-    <mat-card>
-      <mat-card-header>
-        <mat-toolbar  class="header-title">New Customer Sign-Up</mat-toolbar>
-      </mat-card-header>
-      <mat-card-content class="dashboard-card-content">
-        <form #userForm="ngForm" class="example-form">
-          <div>
-            <p>Email: <span style="color: red">(required)</span></p>
-            <input type="email" name="email" ngModel>
-          </div>
-          <div>
-            <p>Confirm Email: <span style="color: red">(required)</span></p>
-            <input type="email" name="confirmEmail" ngModel>
-          </div>
-          <div class="left">
-            <p>First Name:</p>
-            <input type="text" name="firstName" ngModel>
-          </div>
-          <div class="right">
-            <p>Last Name:</p>
-            <input type="text" name="lasttName" ngModel>
-          </div>
-          <div style="clear:both;"></div>
-          <div>
-            <p>Company Name:</p>
-            <input type="text">
-          </div>
-          <div>
-            <p>Address: <span style="color: red">(required)</span></p>
-            <input type="text" name="address" ngModel>
-          </div>
-          <div>
-            <p>City: <span style="color: red">(required)</span></p>
-            <input type="text" name="city" ngModel>
-          </div>
-          <div>
-            <p>Province: <span style="color: red">(required)</span></p>
-            <input type="text" name="province" ngModel>
-          </div>
-          <div>
-            <p>Postal: <span style="color: red">(required)</span></p>
-            <input type="text" name="postal" ngModel>
-          </div>
-          <div class="left">
-            <p>Phone 1: <span style="color: red">(required)</span></p>
-            <input type="text" name="phone1" ngModel>
-          </div>
-          <div class="right">
-            <p>Phone 1 Type: </p>
-            <select name="phone1Type" ngModel>
-              <option selected>-select-</option>
-              <option *ngFor="let phoneType of phoneTypes">{{ phoneType }}</option>
-            </select>          
-          </div>
-          <div style="clear:both;"></div>
-          <div class="left">
-            <p>Phone 2: </p>
-            <input type="text" name="phone2" ngModel>
-          </div>
-          <div class="right">
-            <p>Phone 2 Type: </p>
-            <select name="phone2Type" ngModel>
-              <option selected>-select-</option>
-              <option *ngFor="let phoneType of phoneTypes">{{ phoneType }}</option>
-            </select>          
-          </div>
-          <div style="clear:both;"></div>
-          <div class="left">
-            <p>Phone 3:</p>
-            <input type="text" name="phone3" ngModel>
-          </div>
-          <div class="right">
-            <p>Phone 3 Type: </p>
-            <select name="phone3Type" ngModel>
-              <option selected>-select-</option>
-              <option *ngFor="let phoneType of phoneTypes">{{ phoneType }}</option>
-            </select>          
-          </div>
-          <div style="clear:both;"></div>
-          <div class="left">
-            <p>Security Question: <span style="color: red">(required)</span></p>
-            <select name="securityQues" ngModel>
-              <option value="volvo">Volvo</option>
-            </select>          
-          </div>
-          <div class="right">
-            <p>Answer: <span style="color: red">(required)</span></p>
-            <input type="text" name="answer" ngModel>
-          </div>
-          <div style="clear:both;"></div>
-          <br >
-          <button style="margin-right: 5px" type="submit">Sign Up</button>
-          <button type="">Cancel</button>
-        </form>
-      </mat-card-content>
-    </mat-card>
-  </div> -->
 </div> 
 

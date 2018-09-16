@@ -6,22 +6,29 @@ import { MaterialModule } from './material'
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { SignUpDialogComponent } from './sign-up-dialog/sign-up-dialog.component';
+import { ApproutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    NavbarComponent
+    NavbarComponent,
+    SignUpDialogComponent
   ],
 
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
-    MaterialModule
+    MaterialModule,
+    ApproutingModule
   ],
-
+  entryComponents: [
+    SignUpDialogComponent
+  ],
   exports: [
-    MaterialModule
+    MaterialModule,
+    SignUpDialogComponent
   ],
   
   providers: [],

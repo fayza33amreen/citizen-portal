@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { 
     MatGridListModule, 
     MatCardModule, 
+    MatDialogModule,
     MatMenuModule, 
     MatIconModule,
     MatInputModule, 
@@ -17,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     imports: [
         MatGridListModule,
         MatCardModule,
+        MatDialogModule,
         MatMenuModule,
         MatIconModule,
         MatInputModule,
@@ -34,6 +36,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
       exports: [
         MatGridListModule,
         MatCardModule,
+        MatDialogModule,
         MatMenuModule,
         MatIconModule,
         MatInputModule,
