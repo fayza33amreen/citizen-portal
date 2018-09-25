@@ -1,0 +1,13 @@
+E:\citizen_portal\citizen_portal\bin\Debug\netcoreapp2.1\citizen_portal.deps.json
+E:\citizen_portal\citizen_portal\bin\Debug\netcoreapp2.1\citizen_portal.runtimeconfig.json
+E:\citizen_portal\citizen_portal\bin\Debug\netcoreapp2.1\citizen_portal.runtimeconfig.dev.json
+E:\citizen_portal\citizen_portal\bin\Debug\netcoreapp2.1\citizen_portal.dll
+E:\citizen_portal\citizen_portal\bin\Debug\netcoreapp2.1\citizen_portal.pdb
+E:\citizen_portal\citizen_portal\obj\Debug\netcoreapp2.1\citizen_portal.csproj.CoreCompileInputs.cache
+E:\citizen_portal\citizen_portal\obj\Debug\netcoreapp2.1\citizen_portal.RazorAssemblyInfo.cache
+E:\citizen_portal\citizen_portal\obj\Debug\netcoreapp2.1\citizen_portal.RazorAssemblyInfo.cs
+E:\citizen_portal\citizen_portal\obj\Debug\netcoreapp2.1\citizen_portal.AssemblyInfoInputs.cache
+E:\citizen_portal\citizen_portal\obj\Debug\netcoreapp2.1\citizen_portal.AssemblyInfo.cs
+E:\citizen_portal\citizen_portal\obj\Debug\netcoreapp2.1\citizen_portal.RazorTargetAssemblyInfo.cache
+E:\citizen_portal\citizen_portal\obj\Debug\netcoreapp2.1\citizen_portal.dll
+E:\citizen_portal\citizen_portal\obj\Debug\netcoreapp2.1\citizen_portal.pdb
